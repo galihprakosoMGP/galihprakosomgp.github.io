@@ -1,0 +1,8 @@
+/* Tombol (.pri oranye = aksi utama, .blu biru, .gry abu, .dng merah) */
+button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:10px 16px;font-weight:600}
+.pri{background:linear-gradient(135deg,#F58220,#DB5A0A);color:#fff}
+.blu{background:var(--brand-solid);color:#fff}
+.gry{background:var(--bd);color:var(--tx)}
+.dng{background:#DC3E45;color:#fff}
+header .gry{background:var(--soft);color:var(--brand)}
+button:disabled{opacity:.5;cursor:not-allowed}::placeholder{color:var(--mut);opacity:.8}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- Spendly landing page.
+     Sections in order: Nav, Hero, Logo grid, Features, How it works,
+     Testimonials, Pricing, Final CTA, Footer.
+     Placeholders to replace: href="#" links, customer logos,
+     testimonials, prices. See README.md. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spendly – Know where every dollar goes</title>
+<meta name="description" content="Spendly turns messy receipts and spreadsheets into one clear dashboard for freelancers and small teams.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans">
+
+<!-- 1. NAV (CTA hrefs "#" are placeholders: replace with your real sign-up URL) -->
+<header class="sticky z-30 border-b border-line bg-bg/90 backdrop-blur sticky-safe">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 font-bold text-lg" aria-label="Spendly home">
+      <span class="w-8 h-8 rounded-lg bg-acc text-white grid place-items-center font-extrabold">S</span>Spendly
+    </a>
+    <nav class="flex items-center gap-1 sm:gap-3" aria-label="Account">
+      <a href="#" class="inline-flex items-center min-h-12 px-3 font-medium text-muted hover:text-fg">Sign In</a>
+      <a href="#" class="btn btn-p !px-4 text-sm">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- 2. HERO -->
+<section class="relative overflow-hidden hero-bg">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <h1 class="text-[40px] sm:text-5xl lg:text-[56px] font-bold leading-[1.1] tracking-tight">Know where every dollar goes, effortlessly</h1>
+      <p class="lead mt-6 max-w-xl sm:text-lg">Spendly turns messy receipts and spreadsheets into one clear dashboard, so freelancers and small teams can spend smarter and save more.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="#" class="btn btn-p">Start Free Trial</a>
+        <a href="#how" class="btn btn-g">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch 1-min demo</a>
+      </div>
+      <p class="mt-6 text-sm text-muted"><span class="font-semibold text-fg">Trusted by 2,000+ teams</span> · No credit card required</p>
+    </div>
+
+    <!-- Product mockup (pure HTML/CSS) -->
+    <div class="card p-5 sm:p-6 shadow-[0_24px_60px_-24px_rgba(15,23,42,.35)]" role="img" aria-label="Spendly dashboard preview showing balance, category chart and recent transactions">
+      <div class="flex items-start justify-between">
+        <div><p class="text-sm text-muted">Total balance</p><p class="text-3xl font-bold tabular-nums">$4,820.50</p></div>
+        <span class="text-xs font-semibold text-acct border border-line rounded-full px-3 py-1">+12% this month</span>
+      </div>
+      <div class="mt-6 flex items-center gap-6">
+        <div class="relative w-28 h-28 shrink-0 rounded-full" style="background:conic-gradient(var(--acc) 0 45%,#60A5FA 45% 70%,#94A3B8 70% 88%,#CBD5E1 88% 100%)">
+          <div class="absolute inset-4 rounded-full bg-bg"></div></div>
+        <ul class="w-full space-y-3 text-sm">
+          <li><div class="flex justify-between"><span>Food</span><span class="text-muted">45%</span></div><div class="h-2 rounded-full bg-soft mt-1"><div class="h-2 rounded-full bg-acc" style="width:45%"></div></div></li>
+          <li><div class="flex justify-between"><span>Transport</span><span class="text-muted">25%</span></div><div class="h-2 rounded-full bg-soft mt-1"><div class="h-2 rounded-full" style="width:25%;background:#60A5FA"></div></div></li>
+          <li><div class="flex justify-between"><span>Utilities</span><span class="text-muted">18%</span></div><div class="h-2 rounded-full bg-soft mt-1"><div class="h-2 rounded-full" style="width:18%;background:#94A3B8"></div></div></li>
+        </ul>
+      </div>
+      <ul class="mt-6 divide-y divide-line text-sm border-t border-line">
+        <li class="flex justify-between py-3"><span>Groceries</span><span class="font-semibold tabular-nums">−$64.20</span></li>
+        <li class="flex justify-between py-3"><span>Client invoice</span><span class="font-semibold tabular-nums text-acct">+$1,200.00</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3. LOGO GRID -->
+<section class="border-y border-line bg-soft" aria-label="Customers">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10">
+    <p class="text-center text-sm font-medium text-muted">Loved by teams at</p>
+    <ul class="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-x-6 gap-y-4 text-center text-xl font-bold tracking-tight text-muted opacity-80">
+      <li>Northwind</li><li>Lumina</li><li>Brightly</li><li>Kestrel</li><li class="col-span-2 sm:col-span-1">Tandem</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4. FEATURES -->
+<section id="features" class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+  <div class="max-w-2xl"><h2 class="h2">Everything you need, nothing you don't</h2>
+    <p class="lead mt-4">Four focused tools that replace the spreadsheet for good.</p></div>
+  <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <article class="card p-6"><svg class="text-acct" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
+      <h3 class="mt-5 font-bold text-lg">Live dashboard</h3><p class="mt-2 text-muted">Balance, monthly spend and recent activity in one glance.</p></article>
+    <article class="card p-6"><svg class="text-acct" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v9h9M21 12a9 9 0 1 1-9-9"/></svg>
+      <h3 class="mt-5 font-bold text-lg">Category insights</h3><p class="mt-2 text-muted">See exactly which categories drain your budget each month.</p></article>
+    <article class="card p-6"><svg class="text-acct" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <h3 class="mt-5 font-bold text-lg">Instant search</h3><p class="mt-2 text-muted">Find any transaction by keyword, category or type in seconds.</p></article>
+    <article class="card p-6"><svg class="text-acct" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M6 14h12v7H6z"/></svg>
+      <h3 class="mt-5 font-bold text-lg">Print-ready reports</h3><p class="mt-2 text-muted">Export clean tables for accountants, clients or your records.</p></article>
+  </div>
+</section>
+
+<!-- 5. HOW IT WORKS -->
+<section id="how" class="bg-soft border-y border-line">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+    <div class="max-w-2xl"><h2 class="h2">Up and running in three steps</h2>
+      <p class="lead mt-4">No setup, no imports, no learning curve.</p></div>
+    <ol class="mt-12 grid md:grid-cols-3 gap-8">
+      <li><span class="w-12 h-12 rounded-full bg-acc text-white grid place-items-center font-bold text-lg">1</span>
+        <h3 class="mt-5 font-bold text-lg">Add a transaction</h3><p class="mt-2 text-muted">Enter an amount, a category and a date. It takes about ten seconds.</p></li>
+      <li><span class="w-12 h-12 rounded-full bg-acc text-white grid place-items-center font-bold text-lg">2</span>
+        <h3 class="mt-5 font-bold text-lg">Watch the picture form</h3><p class="mt-2 text-muted">Charts and totals update instantly as your entries grow.</p></li>
+      <li><span class="w-12 h-12 rounded-full bg-acc text-white grid place-items-center font-bold text-lg">3</span>
+        <h3 class="mt-5 font-bold text-lg">Export and share</h3><p class="mt-2 text-muted">Print a tidy report or save it as a PDF whenever you need one.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 6. TESTIMONIALS (sample copy: replace with real customer quotes) -->
+<section class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+  <h2 class="h2 max-w-2xl">People who stopped guessing</h2>
+  <div class="mt-12 grid md:grid-cols-3 gap-5">
+    <figure class="card p-6 flex flex-col"><blockquote class="text-[17px] flex-1">“I closed my spreadsheet for good. Month-end bookkeeping now takes minutes, not an evening.”</blockquote>
+      <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-soft border border-line grid place-items-center font-bold text-acct" aria-hidden="true">AR</span><span><span class="block font-semibold">Ayu Rahma</span><span class="block text-sm text-muted">Freelance designer</span></span></figcaption></figure>
+    <figure class="card p-6 flex flex-col"><blockquote class="text-[17px] flex-1">“The category chart showed we overspent on subscriptions. We cut 18% in the first month.”</blockquote>
+      <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-soft border border-line grid place-items-center font-bold text-acct" aria-hidden="true">DK</span><span><span class="block font-semibold">Daniel Kim</span><span class="block text-sm text-muted">Founder, Brightly</span></span></figcaption></figure>
+    <figure class="card p-6 flex flex-col"><blockquote class="text-[17px] flex-1">“Printable reports made our accountant happy. It is the simplest tool we have ever adopted.”</blockquote>
+      <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-soft border border-line grid place-items-center font-bold text-acct" aria-hidden="true">SM</span><span><span class="block font-semibold">Sara Mitchell</span><span class="block text-sm text-muted">Ops lead, Tandem</span></span></figcaption></figure>
+  </div>
+</section>
+
+<!-- 7. PRICING -->
+<section id="pricing" class="bg-soft border-y border-line">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+    <div class="max-w-2xl"><h2 class="h2">Simple, transparent pricing</h2>
+      <p class="lead mt-4">Start free. Upgrade only when you need more.</p></div>
+    <div class="mt-12 grid md:grid-cols-3 gap-5 items-stretch">
+      <div class="card p-7 flex flex-col"><h3 class="font-bold text-lg">Starter</h3>
+        <p class="mt-3"><span class="text-4xl font-bold">$0</span><span class="text-muted"> / month</span></p>
+        <ul class="mt-6 space-y-3 text-muted flex-1"><li>✓ Unlimited transactions</li><li>✓ Dashboard and charts</li><li>✓ Search and filters</li></ul>
+        <a href="#" class="btn btn-g mt-8">Get Started</a></div>
+      <div class="card p-7 flex flex-col border-2 !border-acc shadow-[0_20px_50px_-24px_rgba(37,99,235,.5)] relative">
+        <span class="absolute -top-3 left-7 bg-acc text-white text-xs font-bold px-3 py-1 rounded-full">Recommended</span>
+        <h3 class="font-bold text-lg">Pro</h3>
+        <p class="mt-3"><span class="text-4xl font-bold">$9</span><span class="text-muted"> / month</span></p>
+        <ul class="mt-6 space-y-3 text-muted flex-1"><li>✓ Everything in Starter</li><li>✓ Print-ready reports</li><li>✓ Multi-currency support</li></ul>
+        <a href="#" class="btn btn-p mt-8">Start Free Trial</a></div>
+      <div class="card p-7 flex flex-col"><h3 class="font-bold text-lg">Team</h3>
+        <p class="mt-3"><span class="text-4xl font-bold">$24</span><span class="text-muted"> / month</span></p>
+        <ul class="mt-6 space-y-3 text-muted flex-1"><li>✓ Everything in Pro</li><li>✓ Up to 10 members</li><li>✓ Priority support</li></ul>
+        <a href="#" class="btn btn-g mt-8">Get Started</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. FINAL CTA -->
+<section class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+  <div class="rounded-3xl px-6 py-14 sm:px-14 sm:py-20 text-center border border-white/10 cta-band">
+    <h2 class="text-[32px] sm:text-4xl lg:text-[40px] font-semibold leading-tight tracking-tight max-w-2xl mx-auto">Take control of your money today</h2>
+    <p class="cta-sub mt-4 text-lg max-w-xl mx-auto">Join 2,000+ teams who finally know where their money goes.</p>
+    <a href="#" class="btn btn-p mt-8 !px-8">Start Free Trial</a>
+    <p class="cta-note mt-4 text-sm">No credit card required · Cancel anytime</p>
+  </div>
+</section>
+</main>
+
+<!-- 9. FOOTER -->
+<footer class="border-t border-line">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
+    <p>© 2026 Spendly. All rights reserved.</p>
+    <nav class="flex items-center" aria-label="Footer">
+      <a href="#" class="inline-flex items-center min-h-12 px-3 hover:text-fg">Privacy</a>
+      <a href="#" class="inline-flex items-center min-h-12 px-3 hover:text-fg">Terms</a>
+      <a href="#" class="inline-flex items-center min-h-12 px-3 hover:text-fg">Contact</a>
+    </nav>
+    <div class="flex items-center">
+      <a href="#" aria-label="Spendly on X" class="w-12 h-12 grid place-items-center hover:text-fg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+      <a href="#" aria-label="Spendly on Instagram" class="w-12 h-12 grid place-items-center hover:text-fg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+      <a href="#" aria-label="Spendly on YouTube" class="w-12 h-12 grid place-items-center hover:text-fg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

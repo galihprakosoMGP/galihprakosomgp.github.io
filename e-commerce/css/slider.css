@@ -1,0 +1,12 @@
+/* Slideshow beranda */
+.slider{position:relative;margin:16px 0;border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(15,60,110,.22);color:#fff}
+.sl{display:none;align-items:center;gap:12px;padding:26px 52px 40px;min-height:210px;animation:fd .5s}
+.sl.on{display:flex}@keyframes fd{from{opacity:0}to{opacity:1}}
+.sl>div{flex:1;min-width:0}.sl h1{margin:0 0 6px;font-weight:800;letter-spacing:-.02em;font-size:clamp(20px,5vw,28px);text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.sl p{margin:0 0 14px;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.art{width:min(44%,260px);flex:none;filter:drop-shadow(0 5px 6px rgba(0,0,0,.25))}
+.cta{background:#fff;color:var(--brand-solid);padding:10px 18px}
+.arr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.3);color:#fff;width:34px;height:34px;padding:0;border-radius:50%;font-size:20px;line-height:1}
+.arr.l{left:8px}.arr.r{right:8px}
+.dots{position:absolute;bottom:12px;left:0;right:0;display:flex;gap:6px;justify-content:center}
+.dots i{width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.55);cursor:pointer;transition:.3s}.dots i.on{background:#fff;width:22px}

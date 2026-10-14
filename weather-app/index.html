@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cuaca – Prakiraan Cuaca Sederhana</title>
+  <meta name="description" content="Cek cuaca saat ini dan prakiraan 7 hari untuk kota mana pun.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/scene.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-sky="clear">
+<!-- Latar artistik (hiasan): lihat css/scene.css -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="cloudShape" viewBox="8 8 52 42"><path d="M18 46a10 10 0 0 1 0-20 14 14 0 0 1 27-3 12 12 0 0 1 1 23z"/></symbol></svg>
+<div class="scene" aria-hidden="true">
+  <div class="orb"></div>
+  <div id="stars" class="stars layer"></div>
+  <svg class="cloud c1"><use href="#cloudShape"/></svg>
+  <svg class="cloud c2"><use href="#cloudShape"/></svg>
+  <svg class="cloud c3"><use href="#cloudShape"/></svg>
+  <div class="fog layer"></div>
+  <div class="rain layer r1"></div><div class="rain layer r2"></div>
+  <div class="snow layer s1"></div><div class="snow layer s2"></div>
+  <div class="flash layer"></div>
+  <svg class="hills" viewBox="0 0 1440 320" preserveAspectRatio="none"><path class="h1" d="M0 220C240 140 420 260 720 200S1200 120 1440 210V320H0z"/><path class="h2" d="M0 270C260 220 520 300 820 255S1250 215 1440 270V320H0z"/></svg>
+</div>
+<main class="app">
+
+  <!-- Bar atas: judul + tombol ganti satuan -->
+  <header class="top">
+    <h1 class="logo"><span class="logo-ico" data-wicon="partly"></span> Cuaca</h1>
+    <button id="unitBtn" class="pill" type="button" aria-label="Ganti satuan suhu">°C</button>
+  </header>
+
+  <!-- Pencarian kota -->
+  <form id="searchForm" class="search" role="search" autocomplete="off">
+    <label for="q" class="sr-only">Cari kota</label>
+    <input id="q" type="search" placeholder="Cari kota, mis. Bandung" maxlength="60">
+    <button class="btn" type="submit">Cari</button>
+    <button id="geoBtn" class="btn ghost" type="button" aria-label="Gunakan lokasi saya" title="Gunakan lokasi saya"><span data-icon="pin"></span></button>
+    <ul id="suggest" class="suggest" hidden></ul>
+  </form>
+
+  <p id="demoBadge" class="demo" hidden>Mode demo · data contoh, bukan cuaca sungguhan</p>
+
+  <!-- Pembaca layar: pengumuman status -->
+  <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+
+  <!-- 1. Tampilan awal -->
+  <section id="welcome" class="card center">
+    <div class="big-ico" data-icon="globe"></div>
+    <h2>Cari cuaca kota mana pun</h2>
+    <p class="muted">Ketik nama kota di atas, atau coba salah satu ini:</p>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <!-- 2. Memuat -->
+  <section id="loading" class="card center" hidden>
+    <div class="spinner" aria-hidden="true"></div>
+    <p class="muted">Memuat data cuaca…</p>
+  </section>
+
+  <!-- 3. Error -->
+  <section id="error" class="card center" hidden>
+    <div class="big-ico" data-icon="alert"></div>
+    <p id="errMsg"></p>
+    <button id="retryBtn" class="btn" type="button">Coba lagi</button>
+  </section>
+
+  <!-- 4. Hasil cuaca -->
+  <section id="weather" hidden>
+    <article class="card now" aria-label="Cuaca saat ini">
+      <div>
+        <h2 id="place" class="place"></h2>
+        <p id="date" class="muted small"></p>
+        <p id="temp" class="temp"></p>
+        <p id="cond" class="cond"></p>
+        <p id="hilo" class="muted"></p>
+      </div>
+      <div id="icon" class="icon" aria-hidden="true"></div>
+    </article>
+
+    <dl class="stats">
+      <div class="card"><dt><span data-icon="feels"></span>Terasa seperti</dt><dd id="sFeels">–</dd></div>
+      <div class="card"><dt><span data-icon="humidity"></span>Kelembapan</dt><dd id="sHumidity">–</dd></div>
+      <div class="card"><dt><span data-icon="wind"></span>Angin</dt><dd id="sWind">–</dd></div>
+      <div class="card"><dt><span data-icon="pressure"></span>Tekanan</dt><dd id="sPressure">–</dd></div>
+      <div class="card"><dt><span data-icon="rain"></span>Peluang hujan</dt><dd id="sRain">–</dd></div>
+      <div class="card"><dt><span data-icon="uv"></span>Indeks UV</dt><dd id="sUv">–</dd></div>
+    </dl>
+
+    <section class="card daily-card" aria-label="Prakiraan 7 hari">
+      <h2 class="section-title">Prakiraan 7 hari</h2>
+      <ul id="daily" class="daily"></ul>
+    </section>
+  </section>
+
+  <footer class="foot">Data cuaca: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></footer>
+</main>
+
+<!-- Urutan penting: config -> icons -> codes -> demo -> api -> ui -> app -->
+<script src="js/config.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/codes.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

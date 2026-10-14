@@ -1,0 +1,14 @@
+/* Token warna, font & tema (terang/gelap) — ubah tampilan toko dari sini */
+:root{--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  /* Palet merek (dari logo): biru tua, biru muda, oranye */
+  --brand:#0F5A9E;--brand-solid:#0F5A9E;--brand-2:#3DA9E8;--accent:#F7861E;
+  /* Latar halaman: gradasi biru muda > abu > krem hangat (bukan putih polos) */
+  --bg:#EAF2FA;--bg3:#F3F5F9;--bg2:#FFF3E7;--hdbg:rgba(255,255,255,.88);
+  --card:#fff;--tx:#1F2A37;--mut:#566273;--bd:#E0E7F0;--soft:#EAF4FC;
+  --prc:#C2570C;--tagbg:#E3F1FC;--tagtx:#0F5A9E;
+  --shadow:0 1px 2px rgba(15,40,80,.06),0 8px 24px rgba(15,40,80,.07);
+  --shadow-hover:0 2px 4px rgba(15,40,80,.08),0 16px 32px rgba(15,60,110,.16);
+  --radius:16px;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1522;--bg3:#0F1D30;--bg2:#17130F;--hdbg:rgba(14,26,42,.88);--card:#14202F;--tx:#E6EDF5;--mut:#9FB0C3;--bd:#24364B;--soft:#12263A;--prc:#FFA45C;--tagbg:#12304F;--tagtx:#8CCBF5;--brand:#5BB0EB;--brand-solid:#1670BA;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);--shadow-hover:0 2px 4px rgba(0,0,0,.3),0 16px 32px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#0B1522;--bg3:#0F1D30;--bg2:#17130F;--hdbg:rgba(14,26,42,.88);--card:#14202F;--tx:#E6EDF5;--mut:#9FB0C3;--bd:#24364B;--soft:#12263A;--prc:#FFA45C;--tagbg:#12304F;--tagtx:#8CCBF5;--brand:#5BB0EB;--brand-solid:#1670BA;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);--shadow-hover:0 2px 4px rgba(0,0,0,.3),0 16px 32px rgba(0,0,0,.4)}

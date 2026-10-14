@@ -1,0 +1,20 @@
+/* ============================================================
+   Tema: warna dasar + 7 "langit". body[data-sky] diatur oleh js/ui.js.
+   Tiap langit: --a/--b/--c = gradasi latar, --orb = matahari/bulan,
+   --cloud-o = kepekatan awan, --hill1/--hill2 = siluet bukit.
+   ============================================================ */
+:root{
+  --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --glass:rgba(10,22,46,.36);--line:rgba(255,255,255,.2);
+  --text:#fff;--muted:rgba(255,255,255,.8);--radius:24px;
+  --accent:#FFC24D;--accent-2:#FF8A4C;--on-accent:#2A1600;
+  /* default = cerah */
+  --a:#0B6BDE;--b:#35A7F5;--c:#9AD9FF;--orb:#FFD66B;--cloud:#fff;--cloud-o:.35;
+  --hill1:rgba(8,50,110,.35);--hill2:rgba(6,32,78,.55);
+}
+body[data-sky=cloudy]{--a:#3E4F6B;--b:#6C84A6;--c:#A8BAD0;--orb:#E9EEF5;--cloud-o:.7;--hill1:rgba(20,30,50,.35);--hill2:rgba(14,22,40,.55)}
+body[data-sky=rain]{--a:#162640;--b:#2F4C74;--c:#5278A3;--orb:#9DB7D6;--cloud:#9DB0C8;--cloud-o:.55;--hill1:rgba(6,16,32,.45);--hill2:rgba(4,10,24,.65)}
+body[data-sky=storm]{--a:#120D2B;--b:#2E2760;--c:#554A9A;--orb:#B7A6FF;--cloud:#6F6AA8;--cloud-o:.6;--hill1:rgba(8,6,24,.5);--hill2:rgba(5,4,16,.7)}
+body[data-sky=snow]{--a:#496A92;--b:#86A9CC;--c:#CFE3F4;--orb:#FFFFFF;--cloud-o:.6;--hill1:rgba(255,255,255,.28);--hill2:rgba(255,255,255,.45)}
+body[data-sky=fog]{--a:#4F5D6B;--b:#7D8B99;--c:#B3BFCA;--orb:#EEF2F6;--cloud-o:.45;--hill1:rgba(30,40,50,.3);--hill2:rgba(22,30,40,.5)}
+body[data-sky=night]{--a:#070B22;--b:#16225A;--c:#3B3F94;--orb:#FFF3C4;--cloud-o:.18;--hill1:rgba(4,6,24,.55);--hill2:rgba(2,4,16,.75)}

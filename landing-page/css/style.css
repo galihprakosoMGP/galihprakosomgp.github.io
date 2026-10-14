@@ -1,0 +1,31 @@
+/* ============================================================
+   Spendly landing page - custom styles
+   - Colors live in the :root tokens below. To rebrand, change
+     --acc (accent). Dark mode follows the visitor's system.
+   - Layout and spacing are Tailwind classes inside index.html.
+   ============================================================ */
+
+/* Design tokens: 3-color system (neutral bg, deep text, accent) */
+/* Design tokens: 3-color system (neutral bg, deep text, blue accent) */
+:root{--bg:#FFFFFF;--soft:#F8FAFC;--fg:#0F172A;--muted:#475569;--line:#E2E8F0;--acc:#2563EB;--acct:#2563EB;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1120;--soft:#0F172A;--fg:#F1F5F9;--muted:#94A3B8;--line:#1E293B;--acct:#60A5FA}}
+:root[data-theme="dark"]{--bg:#0B1120;--soft:#0F172A;--fg:#F1F5F9;--muted:#94A3B8;--line:#1E293B;--acct:#60A5FA}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a:focus-visible,button:focus-visible{outline:3px solid var(--acct);outline-offset:3px;border-radius:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1.5rem;border-radius:12px;font-weight:600;transition:background .2s}
+.btn-p{background:var(--acc);color:#fff}.btn-p:hover{filter:brightness(.9)}
+.btn-g{color:var(--fg);border:1px solid var(--line)}.btn-g:hover{background:var(--soft)}
+.card{border:1px solid var(--line);border-radius:16px;background:var(--bg)}
+.h2{font-size:32px;line-height:1.2;font-weight:600;letter-spacing:-.02em}
+@media(min-width:1024px){.h2{font-size:40px}}
+.lead{font-size:17px;color:var(--muted)}
+
+/* Section-specific helpers */
+.sticky-safe{top:env(safe-area-inset-top,0px)}
+.hero-bg{background:radial-gradient(60% 50% at 75% 0%,color-mix(in srgb,var(--acc) 12%,transparent),transparent)}
+.cta-band{background:#0F172A;color:#fff}   /* final banner stays dark in both themes */
+.cta-sub{color:#CBD5E1}
+.cta-note{color:#94A3B8}

@@ -1,0 +1,19 @@
+/* Spendly - custom styles.
+   Most styling is done with Tailwind classes directly in index.html;
+   only things Tailwind can't do (safe-area, print rules) live here. */
+
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.bar{transition:width .5s ease}
+@media print{
+  body.report-open{background:#fff!important}
+  body.report-open>*{display:none!important}
+  body.report-open>#reportModal{display:block!important;position:static!important;background:none!important;padding:0!important}
+  #reportBox{max-width:none!important;box-shadow:none!important;border-radius:0!important;max-height:none!important;display:block!important}
+  #reportBody{overflow:visible!important;padding:0!important}
+  .no-print{display:none!important}
+  thead{display:table-header-group}
+  tr{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
